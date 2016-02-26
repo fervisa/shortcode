@@ -31,7 +31,7 @@ class Shortcode::Configuration
 
   def initialize
     @template_parser      = :erb
-    @template_path        = "app/views/shortcode_templates"
+    @template_path        = ["app/views/shortcode_templates"]
     @templates            = nil
     @helpers              = []
     @block_tags           = []

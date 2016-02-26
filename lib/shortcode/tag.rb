@@ -41,8 +41,10 @@ class Shortcode::Tag
     end
 
     def template_files
-      template_paths.map do |filename|
-        File.join Shortcode.configuration.template_path, filename
+      template_paths.flat_map do |filename|
+        Shortcode.configuration.template_path.map do |path|
+          File.join path, filename
+        end
       end
     end
 
